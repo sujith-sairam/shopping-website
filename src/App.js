@@ -6,6 +6,8 @@ import NavigationBar from './components/routes/navigation/navigation';
 
 function Shop(){
   return <h1>I am the Shop</h1>
+
+  
 };
 
 
