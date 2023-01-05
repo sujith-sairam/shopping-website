@@ -6,7 +6,8 @@ import {
     signInWithRedirect,
     signInWithPopup,
     createUserWithEmailAndPassword,
-    GoogleAuthProvider
+    GoogleAuthProvider,
+    signOut
 } from 'firebase/auth';
 
 import {
@@ -26,7 +27,7 @@ const firebaseConfig = {
   };
   
   // Initialize Firebase
-  const firebaseapp = initializeApp(firebaseConfig);
+  const firebaseApp = initializeApp(firebaseConfig);
 
   const googleprovider = new GoogleAuthProvider();
 
@@ -34,7 +35,7 @@ const firebaseConfig = {
      prompt: "select_account"
   });
 
-  export const auth = getAuth();
+  export const auth = getAuth(firebaseApp);
 
   export const signInWithGooglePopup = () => signInWithPopup(auth, googleprovider);
   export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleprovider);
@@ -80,3 +81,5 @@ const firebaseConfig = {
     return await signInWithEmailAndPassword(auth,email,password);
 
   }
+
+  export const signOutUser = async () => await  signOut(auth);
