@@ -3,12 +3,9 @@ import { Routes,Route } from 'react-router-dom';
 import Authentication from './components/routes/Authentication/authentication';
 import Home from "./components/routes/home/home";
 import NavigationBar from './components/routes/navigation/navigation';
+import Shop from './components/routes/shop/shop';
 
-function Shop(){
-  return <h1>I am the Shop</h1>
 
-  
-};
 
 
 function App(){
