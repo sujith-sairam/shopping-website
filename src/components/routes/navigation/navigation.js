@@ -7,10 +7,12 @@ import { useContext } from "react";
 import { signOutUser } from "../../../utils/firebase/firebase.utils";
 import CartIcon from "../../cart-icon/cart-icon";
 import CartDropdown from "../../cart-dropdown/cart-dropdown";
+import { CartContext } from "../../../contexts/cart.context";
 
 
 function NavigationBar(){
   const {currentUser} = useContext(UserContext);
+  const { isCartOpen } = useContext(CartContext);
  
     return(
       <Fragment>
@@ -26,7 +28,7 @@ function NavigationBar(){
                       ):(<Link className="nav-link" to='/auth'>SIGN IN</Link>   )}</Link>
               <CartIcon/>
           </div>
-          <CartDropdown/>
+            { isCartOpen && <CartDropdown/> }
         </div>
         <Outlet/>
         </Fragment>
