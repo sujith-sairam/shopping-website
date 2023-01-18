@@ -5,6 +5,8 @@ import { UserContext } from "../../../contexts/user.contexts";
 import './navigation.styles.scss';
 import { useContext } from "react";
 import { signOutUser } from "../../../utils/firebase/firebase.utils";
+import CartIcon from "../../cart-icon/cart-icon";
+import CartDropdown from "../../cart-dropdown/cart-dropdown";
 
 
 function NavigationBar(){
@@ -22,7 +24,9 @@ function NavigationBar(){
                        currentUser ? (
                         <span className="nav-link" onClick={signOutUser}>SIGN OUT</span>
                       ):(<Link className="nav-link" to='/auth'>SIGN IN</Link>   )}</Link>
+              <CartIcon/>
           </div>
+          <CartDropdown/>
         </div>
         <Outlet/>
         </Fragment>
