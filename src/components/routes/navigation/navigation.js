@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { signOutUser } from "../../../utils/firebase/firebase.utils";
 import CartIcon from "../../cart-icon/cart-icon";
 import CartDropdown from "../../cart-dropdown/cart-dropdown";
-import { CartContext } from "../../../contexts/cart.context";
+import { CartContext } from "../../../contexts/cart-item.context";
 
 
 function NavigationBar(){
